@@ -38,26 +38,24 @@ class ViewController: UIViewController {
         activityTextView.layer.borderColor = CGColor(gray: 0.25, alpha: 0.25)
         
     }
-
+    
     @IBAction func doFind(_ sender: Any) {
         AF.request(urlString).responseJSON{ (response) in
-            if let jsonData = response.value as? [String:Any] {
+            if let data = response.value as? [String:Any] {
                 
-                self.activityTextView.text = jsonData["activity"] as? String
-                self.typeTextField.text = jsonData["type"] as? String
-                self.participantsTextField.text = "\(String(describing: jsonData["participants"] ?? "--"))"
-                self.priceTextField.text = "\(String(describing: jsonData["price"] ?? "--"))"
-                self.accesibilityTextField.text = "\(String(describing: jsonData["accessibility"] ?? "--"))"
+                let jsonData = JSON(data)
                 
-                if let link = jsonData["link"] as? String {
+                self.activityTextView.text = jsonData["activity"].string
+                self.typeTextField.text = jsonData["type"].string
+                self.participantsTextField.text = jsonData["participants"].int?.description
+                self.priceTextField.text = jsonData["price"].float?.description
+                self.accesibilityTextField.text = jsonData["accessibility"].float?.description
+                
+                if let link = jsonData["link"].string {
                     if(link != "") {
-                        
-                        
                         let attributedString = NSMutableAttributedString(string: link)
                         attributedString.addAttribute(.link, value: link, range: NSRange(location: 0, length: link.count ))
-
                         self.wikiLink.attributedText = attributedString
-                        
                     } else {
                         self.wikiLink.attributedText = NSMutableAttributedString(string: "[no link]")
                     }
