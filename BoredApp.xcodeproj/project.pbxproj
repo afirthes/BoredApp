@@ -13,6 +13,7 @@
 		089A96B726EC5D8B0075F09A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 089A96B526EC5D8B0075F09A /* Main.storyboard */; };
 		089A96B926EC5D8C0075F09A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 089A96B826EC5D8C0075F09A /* Assets.xcassets */; };
 		089A96BC26EC5D8C0075F09A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 089A96BA26EC5D8C0075F09A /* LaunchScreen.storyboard */; };
+		175F93379153AF80E256E828 /* Pods_BoredApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B71D785237F0C0105F0FFDC /* Pods_BoredApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		089A96B826EC5D8C0075F09A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		089A96BB26EC5D8C0075F09A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		089A96BD26EC5D8C0075F09A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B71D785237F0C0105F0FFDC /* Pods_BoredApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoredApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A21E47D5E8299D89DC2E16E /* Pods-BoredApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoredApp.debug.xcconfig"; path = "Target Support Files/Pods-BoredApp/Pods-BoredApp.debug.xcconfig"; sourceTree = "<group>"; };
+		CD3B5D94FF3B9D76702EFEB4 /* Pods-BoredApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoredApp.release.xcconfig"; path = "Target Support Files/Pods-BoredApp/Pods-BoredApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				175F93379153AF80E256E828 /* Pods_BoredApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				089A96AE26EC5D8B0075F09A /* BoredApp */,
 				089A96AD26EC5D8B0075F09A /* Products */,
+				F5CF4044DD0E1F6B3C791C57 /* Pods */,
+				94D4595A2A9F402791E621B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = BoredApp;
 			sourceTree = "<group>";
 		};
+		94D4595A2A9F402791E621B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B71D785237F0C0105F0FFDC /* Pods_BoredApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F5CF4044DD0E1F6B3C791C57 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4A21E47D5E8299D89DC2E16E /* Pods-BoredApp.debug.xcconfig */,
+				CD3B5D94FF3B9D76702EFEB4 /* Pods-BoredApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 089A96C026EC5D8C0075F09A /* Build configuration list for PBXNativeTarget "BoredApp" */;
 			buildPhases = (
+				6251C698199E980CC08DFA92 /* [CP] Check Pods Manifest.lock */,
 				089A96A826EC5D8B0075F09A /* Sources */,
 				089A96A926EC5D8B0075F09A /* Frameworks */,
 				089A96AA26EC5D8B0075F09A /* Resources */,
+				FC6081ABE6061B5309188EA2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6251C698199E980CC08DFA92 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BoredApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC6081ABE6061B5309188EA2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BoredApp/Pods-BoredApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BoredApp/Pods-BoredApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BoredApp/Pods-BoredApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		089A96A826EC5D8B0075F09A /* Sources */ = {
@@ -283,6 +352,7 @@
 		};
 		089A96C126EC5D8C0075F09A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A21E47D5E8299D89DC2E16E /* Pods-BoredApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +372,7 @@
 		};
 		089A96C226EC5D8C0075F09A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD3B5D94FF3B9D76702EFEB4 /* Pods-BoredApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
